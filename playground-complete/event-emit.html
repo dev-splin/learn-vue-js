@@ -10,6 +10,7 @@
   <div id="app">
     <p>{{ num }}</p>
     <!-- <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 메서드 이름"></app-header> -->
+    <!-- 하위 컴포넌트의 메소드(pass, increase)를 실행시키면 상위 컴포넌트의 메소드(logText, increaNumber)가 실행됨 -->
     <app-header v-on:pass="logText"></app-header>
     <app-content v-on:increase="increaseNumber"></app-content>
   </div>
