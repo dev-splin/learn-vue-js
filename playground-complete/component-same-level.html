@@ -8,7 +8,9 @@
 </head>
 <body>
   <div id="app">
+    <!-- props로 값을 넣어줌 -->
     <app-header v-bind:propsdata="num"></app-header>
+    <!-- pass를 deliverNum으로 정의 -->
     <app-content v-on:pass="deliverNum"></app-content>
   </div>
 
@@ -20,6 +22,7 @@
     }
     var appContent = {
       template: '<div>content<button v-on:click="passNum">pass</button></div>',
+      // 상위 컴포넌트로 통신할 때, 파라미터를 넘겨줌
       methods: {
         passNum: function() {
           this.$emit('pass', 10);
@@ -37,6 +40,7 @@
         num: 0
       },
       methods: {
+        // props로 연결된 변수 값을 변경
         deliverNum: function(value) {
           this.num = value;
         }
